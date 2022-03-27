@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { COUNTRIES } from '../constants/countries';
 
 const WeatherForm = () => {
   return (
@@ -11,8 +12,12 @@ const WeatherForm = () => {
 
       <Form.Group>
         <Form.Select aria-label="Default select example">
-          <option>Open this select menu</option>
-          <option value="1">One</option>
+          <option>Select a country</option>
+          {Object.entries(COUNTRIES).map(([key, value]) => (
+            <option key={key} value={key}>
+              {value}
+            </option>
+          ))}
         </Form.Select>
       </Form.Group>
       <Button variant="primary" type="submit">
