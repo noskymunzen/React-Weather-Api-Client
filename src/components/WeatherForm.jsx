@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { Form, Button, Row } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { COUNTRIES } from '../constants/countries';
 
-const WeatherForm = () => {
+const WeatherForm = (props) => {
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await props.onSubmit({ city, country });
+  };
+
   return (
-    <Form className="d-flex justify-content-center">
+    <Form className="d-flex justify-content-center" onSubmit={handleSubmit}>
       <Row>
         <Form.Group className="mb-3 px-0">
           <Form.Control
