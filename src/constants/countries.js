@@ -5,6 +5,4 @@ export const COUNTRIES = {
   RU: 'Russia',
   ES: 'Spain',
   FR: 'France',
-  MX: 'Mexico',
-  CHI: 'Chile',
 };

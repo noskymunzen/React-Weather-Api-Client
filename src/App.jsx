@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 import WeatherForm from './components/WeatherForm';
 import $weather from './services/weather';
 import { kelvinToFahrenheit } from './helpers/weather';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Container, Row } from 'react-bootstrap';
 import WeatherSummary from './components/WeatherSummary';
 
 function App() {
@@ -33,22 +34,26 @@ function App() {
 
   return (
     <>
-      <h1 className="d-flex justify-content-center mt-5">
+      <h1 className="d-flex justify-content-center mb-5 mt-5 text-white">
         Check your local region weather ⛅
       </h1>
-      {hasSuccess && !loading && (
-        <WeatherSummary
-          city={city}
-          currentTemp={currentTemp}
-          maxTemp={maxTemp}
-          minTemp={minTemp}
-        />
-      )}
-      {loading && (
-        <Spinner className="mb-5" animation="grow" variant="warning" />
-      )}
+      <Container className="d-flex justify-content-center mb-3">
+        <Row className="d-flex justify-content-center">
+          {hasSuccess && !loading && (
+            <WeatherSummary
+              city={city}
+              currentTemp={currentTemp}
+              maxTemp={maxTemp}
+              minTemp={minTemp}
+            />
+          )}
+          {loading && (
+            <Spinner className="mb-5" animation="grow" variant="warning" />
+          )}
 
-      <WeatherForm onSubmit={handleSubmit} />
+          <WeatherForm onSubmit={handleSubmit} />
+        </Row>
+      </Container>
     </>
   );
 }

@@ -4,10 +4,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 const WeatherSummary = ({ city, currentTemp, maxTemp, minTemp }) => {
   return (
     <>
-      <h2 className="d-flex justify-content-center mt-5 text-black">
-        {city} weather:
+      <h2 className="d-flex justify-content-center text-white">
+        {city}&lsquo;s weather:
       </h2>
-      <Container className="d-flex justify-content-center mt-3 mb-3 text-black">
+      <Container className="d-flex justify-content-center mt-3 mb-5 text-white">
         <Row xs={1} md={1}>
           <Col className="h2 d-flex justify-content-center mt-3 mb-5">
             {currentTemp}°
