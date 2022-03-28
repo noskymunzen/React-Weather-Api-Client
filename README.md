@@ -1,3 +1,7 @@
 # Project Weather Api Client
 
-Made using React-Bootstrap and Axios.
+Made with:
+
+- react-bootstrap
+- axios
+- Open Weather API
