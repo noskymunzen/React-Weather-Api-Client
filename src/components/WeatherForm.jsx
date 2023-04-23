@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Form, Button, Row } from 'react-bootstrap';
+import { Button, Form, Row } from 'react-bootstrap';
 import { COUNTRIES } from '../constants/countries';
 
 const WeatherForm = (props) => {
   const [city, setCity] = useState('');
+
   const [country, setCountry] = useState('');
 
   const handleSubmit = async (event) => {
